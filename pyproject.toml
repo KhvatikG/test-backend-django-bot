@@ -1,0 +1,19 @@
+[tool.poetry]
+name = "testbackenddjangobot"
+version = "0.1.0"
+description = ""
+authors = ["Garik <khvatik.igor@gmail.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.12"
+django = "^5.1.4"
+djangorestframework = "^3.15.2"
+psycopg2 = "^2.9.10"
+gunicorn = "^23.0.0"
+aiogram = "^3.17.0"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"

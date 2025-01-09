@@ -8,11 +8,11 @@ set -e
 
 # Применение миграций
 echo "Applying database migrations..."
-python3 src/manage.py makemigrations
-python3 src/manage.py migrate --noinput
+python3 /app/src/manage.py makemigrations
+python3 /app/src/manage.py migrate --noinput
 
 echo "Creating superuser..."
-python3 src/manage.py create_superuser
+python3 /app/src/manage.py create_superuser
 
 # Запуск сервера
 echo "Starting server..."

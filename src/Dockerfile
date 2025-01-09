@@ -30,6 +30,6 @@ ENV PYTHONPATH="/app:${PYTHONPATH}"
 COPY ./src/entrypoint.sh /app/src/entrypoint.sh
 RUN chmod +x /app/src/entrypoint.sh
 
-ENTRYPOINT ["/app/src/entrypoint.sh"]
+ENTRYPOINT ["bash", "/app/src/entrypoint.sh"]
 CMD ["gunicorn", "--chdir", "/app/src", "--bind", "0.0.0.0:8000", "core.wsgi:application"]
 

@@ -1,5 +1,24 @@
 
 services:
+  db:
+    image: postgres:17.2
+    ports:
+      - "5432:5432"
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+    env_file:
+      - ../src/.env
+
+  bot:
+    build:
+      context: ..
+      dockerfile: bot/Dockerfile
+    depends_on:
+      - web
+      - db
+    env_file:
+      - ../src/.env
+
   web:
     build:
       context: ..
@@ -8,16 +27,6 @@ services:
       - "8000:8000"
     depends_on:
       - db
-    env_file:
-      - ../src/.env
-
-
-  db:
-    image: postgres:latest
-    ports:
-      - "5432:5432"
-    volumes:
-      - pgdata:/var/lib/postgresql/data
     env_file:
       - ../src/.env
 

@@ -4,6 +4,10 @@ from django.db import models
 from django.utils.timezone import now
 
 
+def default_start_date():
+    return now().date()
+
+
 class User(models.Model):
     """
     Модель пользователя с подпиской
@@ -35,7 +39,7 @@ class Subscription(models.Model):
         verbose_name="Пользователь",
         related_name="subscriptions"
     )
-    start_date = models.DateField(default=now, verbose_name="Дата начала подписки")
+    start_date = models.DateField(default=default_start_date, verbose_name="Дата начала подписки")
     duration = models.DurationField(default=timedelta(days=30), verbose_name="Срок действия подписки")
 
     class Meta:

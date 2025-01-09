@@ -18,8 +18,8 @@ Telegram бот с регистрацией пользователей и упр
 
 1. Клонируйте репозиторий:
 ```bash
-git clone <repository-url>
-cd TestBackEndDjangoBot
+git clone https://github.com/KhvatikG/test-backend-django-bot
+cd test-backend-django-bot
 ```
 
 2. Создайте файл `.env` в директории src:
